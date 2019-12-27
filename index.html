@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+<title>Cabin Availibility</title>
+<link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/dateTimePicker.css">
+    <script type="text/javascript" src="scripts/components/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/dateTimePicker.min.js"></script>
+</head>
+<body>
+	<div id="basic" data-toggle="calendar" ></div>
+  
+  <script type="text/javascript">
+$(document).ready(function()
+{
+      $('#basic').calendar();
+      $('#basic').calendar({
+        onSelectDate: function(date, month, year){
+          alert([year, month, date].join('-') + ' is: ' + this.isAvailable(date, month, year));
+        }
+}); 
+}
+</script>
+</body>
+</html>
